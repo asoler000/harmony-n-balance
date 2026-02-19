@@ -85,10 +85,23 @@ h1, h2, h3 {
     width: auto;
     display: inline-block;
     filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+    opacity: 0;
+    animation: logoFadeIn 1.5s ease-out 0.5s forwards;
+}
+
+@keyframes logoFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* ========================
-   HERO SECTION
+   HERO SECTION - MATCHING YOUR IMAGE
    ======================== */
 
 .hero-section {
@@ -97,13 +110,13 @@ h1, h2, h3 {
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    background: linear-gradient(135deg, var(--secondary-cream) 0%, var(--primary-mauve) 100%);
+    background: linear-gradient(180deg, #E8DDD3 0%, #C4B5A8 50%, #8B7969 100%);
     overflow: hidden;
     padding-top: 0;
-    padding-bottom: 4rem;
+    padding-bottom: 6rem;
 }
 
-/* Model Background Image - CENTERED, FULL HEIGHT */
+/* Model Background Image - CENTERED, FULL HEIGHT like your image */
 .hero-background-model {
     position: absolute;
     top: 0;
@@ -111,17 +124,32 @@ h1, h2, h3 {
     width: 100%;
     height: 100%;
     z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero-model-image {
-    width: 100%;
     height: 100%;
-    object-fit: cover;
+    width: auto;
+    object-fit: contain;
     object-position: center center;
-    transform: scale(1.1);
+    opacity: 0;
+    animation: modelFadeIn 2s ease-out forwards;
 }
 
-/* Hero Content Layer - Below neck */
+@keyframes modelFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(1.05);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Hero Content Layer - Text BELOW model's neck */
 .hero-content {
     position: relative;
     z-index: 3;
@@ -133,37 +161,11 @@ h1, h2, h3 {
     width: 100%;
     max-width: 1400px;
     padding: 2rem;
-}
-
-.product-animation {
-    margin-bottom: 2rem;
-}
-
-.animated-product {
-    max-width: 320px;
-    height: auto;
-    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
-    animation: productFloat 3s ease-in-out forwards;
-    opacity: 0;
-}
-
-@keyframes productFloat {
-    0% {
-        opacity: 0;
-        transform: translateY(-50px) rotateY(-15deg) scale(0.8);
-    }
-    50% {
-        opacity: 1;
-        transform: translateY(0) rotateY(5deg) scale(1.05);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0) rotateY(0deg) scale(1);
-    }
+    padding-bottom: 4rem;
 }
 
 .hero-text-wrapper {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 .hero-title {
@@ -186,15 +188,11 @@ h1, h2, h3 {
 }
 
 .fade-in-sequence[data-delay="0"] {
-    animation-delay: 1s;
+    animation-delay: 1.5s;
 }
 
 .fade-in-sequence[data-delay="1"] {
-    animation-delay: 2s;
-}
-
-.fade-in-sequence[data-delay="2"] {
-    animation-delay: 3s;
+    animation-delay: 2.2s;
 }
 
 @keyframes fadeInUp {
@@ -210,7 +208,7 @@ h1, h2, h3 {
 
 .scroll-indicator {
     position: absolute;
-    bottom: var(--spacing-md);
+    bottom: 2rem;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -221,7 +219,7 @@ h1, h2, h3 {
     font-size: 0.875rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    animation: fadeIn 1s ease-out 4s forwards;
+    animation: fadeIn 1s ease-out 3s forwards;
     opacity: 0;
 }
 
@@ -598,10 +596,6 @@ h1, h2, h3 {
     .hero-title {
         font-size: 2.2rem;
     }
-    
-    .animated-product {
-        max-width: 260px;
-    }
 }
 
 @media (max-width: 768px) {
@@ -618,12 +612,9 @@ h1, h2, h3 {
         font-size: 1.8rem;
     }
     
-    .animated-product {
-        max-width: 220px;
-    }
-    
     .hero-model-image {
-        transform: scale(1.2);
+        width: 100%;
+        height: auto;
     }
     
     .product-section {
@@ -638,14 +629,6 @@ h1, h2, h3 {
     
     .hero-title {
         font-size: 1.4rem;
-    }
-    
-    .animated-product {
-        max-width: 180px;
-    }
-    
-    .hero-model-image {
-        transform: scale(1.3);
     }
 }
 
