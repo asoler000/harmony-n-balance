@@ -1,1 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMART RADIANT Eye Massager - Interactive View</title>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: linear-gradient(180deg, #E8DDD3 0%, #C4B5A8 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            color: #B76E79;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .viewer-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(10px);
+        }
+
+        model-viewer {
+            width: 100%;
+            height: 400px;
+            background-color: transparent;
+            border-radius: 15px;
+        }
+
+        .product-info {
+            margin-top: 20px;
+        }
+
+        .product-name {
+            font-size: 24px;
+            font-weight: 500;
+            color: #3A2E2E;
+            margin-bottom: 5px;
+        }
+
+        .product-tagline {
+            font-size: 14px;
+            color: #B76E79;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .features {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .features li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(181, 152, 158, 0.2);
+            color: #6B5858;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+        }
+
+        .features li::before {
+            content: '✦';
+            color: #B76E79;
+            margin-right: 12px;
+            font-size: 16px;
+        }
+
+        .features li:last-child {
+            border-bottom: none;
+        }
+
+        .instructions {
+            background: rgba(183, 110, 121, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .instructions p {
+            font-size: 13px;
+            color: #6B5858;
+            margin: 5px 0;
+        }
+
+        .instructions strong {
+            color: #B76E79;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 500;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+        }
+
+        .btn-primary {
+            background: #B76E79;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #A55D68;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(183, 110, 121, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #B76E79;
+            border: 2px solid #B76E79;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(183, 110, 121, 0.1);
+        }
+
+        .price-tag {
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background: linear-gradient(135deg, #B76E79 0%, #D4A5A5 100%);
+            border-radius: 15px;
+        }
+
+        .price-tag .price {
+            font-size: 32px;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 5px;
+        }
+
+        .price-tag .price-note {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .ar-note {
+            text-align: center;
+            font-size: 12px;
+            color: #6B5858;
+            margin-top: 15px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <h1>HARMONY & BALANCE</h1>
+        </div>
+
+        <div class="viewer-card">
+            <!-- 3D Model Viewer - We'll use a placeholder sphere for now -->
+            <model-viewer
+                src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+                alt="SMART RADIANT Eye Massager 3D Model"
+                auto-rotate
+                camera-controls
+                shadow-intensity="1"
+                style="--poster-color: transparent;"
+            >
+                <div class="ar-note">
+                    👆 Rotate with your finger to view 360°
+                </div>
+            </model-viewer>
+
+            <div class="product-info">
+                <h2 class="product-name">SMART RADIANT Eye Massager</h2>
+                <p class="product-tagline">Heated Light & Vibration Eye Renewal Tool</p>
+
+                <div class="price-tag">
+                    <div class="price">$29.99</div>
+                    <div class="price-note">Available at TJ Maxx</div>
+                </div>
+
+                <div class="instructions">
+                    <p><strong>How to Use:</strong></p>
+                    <p>Apply eye cream → Gently massage in upward motions → Use daily for best results</p>
+                </div>
+
+                <ul class="features">
+                    <li>3 Technologies: Vibration massage, soothing warmth & illuminating care</li>
+                    <li>Adjustable Temperature: 98.6-113°F (37-45°C)</li>
+                    <li>Supports radiant skin with warming and illuminating care</li>
+                    <li>Helps eye creams absorb better</li>
+                    <li>Portable & rechargeable - USB charging included</li>
+                    <li>Perfect for on-the-go beauty rituals</li>
+                </ul>
+
+                <div class="cta-buttons">
+                    <a href="/" class="btn btn-primary">Visit Website</a>
+                    <a href="#" class="btn btn-secondary" onclick="shareProduct()">Share</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Share functionality
+        function shareProduct() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'SMART RADIANT Eye Massager',
+                    text: 'Check out this amazing eye massager from Harmony & Balance!',
+                    url: window.location.href
+                }).catch(err => console.log('Error sharing:', err));
+            } else {
+                alert('Sharing not supported on this device');
+            }
+        }
+
+        // Track analytics (optional)
+        console.log('Product viewer loaded - QR scan successful');
+    </script>
+</body>
+</html>
 
