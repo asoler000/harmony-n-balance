@@ -1,0 +1,21 @@
+{
+  "name": "harmony-balance-website",
+  "version": "1.0.0",
+  "description": "Harmony & Balance - Ancient Asian techniques meet science for anti-aging precision",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "beauty",
+    "anti-aging",
+    "luxury",
+    "wellness"
+  ],
+  "author": "Harmony & Balance",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.22.1"
+  }
+}
