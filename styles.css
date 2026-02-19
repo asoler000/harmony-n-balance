@@ -61,10 +61,210 @@ h1, h2, h3 {
 }
 
 /* ========================
-   HERO SECTION - FIXED LAYERING
+   HERO SECTION - LUXURY STYLING
    ======================== */
 
-undefined
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background: linear-gradient(180deg, #E8DDD3 0%, #C4B5A8 50%, #8B7969 100%);
+    overflow: hidden;
+    padding-top: 0;
+    padding-bottom: 6rem;
+    margin: 0;
+}
+
+/* Logo - Centered with size limits */
+.site-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background: transparent;
+    padding: 1.5rem 2rem;
+    margin: 0;
+}
+
+.logo-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.site-logo {
+    height: 35vw;
+    max-height: 300px;
+    min-height: 80px;
+    width: auto;
+    display: inline-block;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+    opacity: 0;
+    animation: logoFadeIn 1.5s ease-out 0.5s forwards;
+}
+
+@keyframes logoFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Model Background Image - ABOVE logo, z-index 3 */
+.hero-background-model {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-model-image {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    object-position: center center;
+    opacity: 0;
+    animation: modelFadeIn 2s ease-out forwards;
+}
+
+@keyframes modelFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(1.05);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Hero Content Layer - LUXURY TEXT STYLING */
+.hero-content {
+    position: relative;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: center;
+    width: 100%;
+    max-width: 1400px;
+    padding: 2rem;
+    padding-bottom: 4rem;
+}
+
+.hero-text-wrapper {
+    margin-bottom: 3rem;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    padding: 2.5rem 3rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.hero-title {
+    font-family: var(--font-body);
+    font-size: 2.8rem;
+    font-weight: 300;
+    line-height: 1.4;
+    margin: 0.5rem 0;
+    color: #ffffff;
+    letter-spacing: 0.02em;
+    opacity: 0;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3),
+                 0 0 40px rgba(255, 255, 255, 0.2);
+}
+
+.hero-title .text-line {
+    display: inline;
+}
+
+.fade-in-sequence {
+    animation: fadeInUp 1.2s ease-out forwards;
+}
+
+.fade-in-sequence[data-delay="0"] {
+    animation-delay: 1.5s;
+}
+
+.fade-in-sequence[data-delay="1"] {
+    animation-delay: 2.2s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Discover indicator - Luxury glow effect */
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xs);
+    color: #ffffff;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    animation: fadeIn 1s ease-out 3s forwards;
+    opacity: 0;
+    font-weight: 400;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.4),
+                 0 0 30px rgba(255, 255, 255, 0.3);
+}
+
+@keyframes fadeIn {
+    to { 
+        opacity: 1;
+    }
+}
+
+.scroll-arrow {
+    width: 2px;
+    height: 40px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
+    position: relative;
+    animation: scrollBounce 2s ease-in-out infinite;
+    border-radius: 2px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes scrollBounce {
+    0%, 100% { 
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50% { 
+        transform: translateY(10px);
+        opacity: 0.6;
+    }
+}
 
 /* ========================
    PRODUCT SECTIONS
@@ -416,11 +616,16 @@ undefined
 
 @media (max-width: 1024px) {
     .site-logo {
-        height: 180px;
+        height: 28vw;
+        max-height: 250px;
     }
     
     .hero-title {
         font-size: 2.2rem;
+    }
+    
+    .hero-text-wrapper {
+        padding: 2rem 2.5rem;
     }
 }
 
@@ -431,11 +636,17 @@ undefined
     }
     
     .site-logo {
-        height: 140px;
+        height: 25vw;
+        max-height: 180px;
+        min-height: 70px;
     }
     
     .hero-title {
         font-size: 1.8rem;
+    }
+    
+    .hero-text-wrapper {
+        padding: 1.5rem 2rem;
     }
     
     .hero-model-image {
@@ -450,11 +661,17 @@ undefined
 
 @media (max-width: 480px) {
     .site-logo {
-        height: 100px;
+        height: 20vw;
+        max-height: 120px;
+        min-height: 60px;
     }
     
     .hero-title {
         font-size: 1.4rem;
+    }
+    
+    .hero-text-wrapper {
+        padding: 1.25rem 1.5rem;
     }
 }
 
